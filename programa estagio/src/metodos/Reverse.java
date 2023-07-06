@@ -27,23 +27,37 @@ public class Reverse {
 	//metodos de inversão
 	private void findWords(){
 		int lim = 0;
-		for(int i = 0; i < this.frase.length(); i++) {
+		int tam = this.frase.length();
+		for(int i = 0; i < tam; i++) {
 			char letra = this.frase.charAt(i);
 			if(letra == ' ') {
-				palavras.add(getWord(i,lim));
-				if(lim == 0)
+				if(lim != 0) {
+					palavras.add(getWord(i,lim +1));
+				}else {
+					palavras.add(getWord(i,lim));
+				}
 				lim = i;
+			}else if(i == tam-1) {
+				for(int k = tam-1; k >= lim; k-- ) {
+					if(k == lim) {
+						palavras.add(getWord(tam-1,k+1));
+					}
+				}
 			}
 		}
 	}
-	
 	public String inverteString(){
 		String fraseInvertida = null; 
 		findWords();
 		for(int i = this.palavras.size()-1; i >= 0; i--) {
-			this.inverse.append(this.palavras.get(i));
-			this.inverse.append(' ');
+			if(i == 0) {
+				this.inverse.append(this.palavras.get(i));
+			}else {
+				this.inverse.append(this.palavras.get(i));
+				this.inverse.append(" ");
+			}
 		}
+		
 		fraseInvertida = this.inverse.toString();
 		return fraseInvertida;
 		
