@@ -30,9 +30,9 @@ public class Reverse {
 		for(int i = 0; i < this.frase.length(); i++) {
 			char letra = this.frase.charAt(i);
 			if(letra == ' ') {
-				palavras.add(getWord(i-1,lim));
+				palavras.add(getWord(i,lim));
 				if(lim == 0)
-				lim = i+1;
+				lim = i;
 			}
 		}
 	}
@@ -47,6 +47,12 @@ public class Reverse {
 		fraseInvertida = this.inverse.toString();
 		return fraseInvertida;
 		
+	}
+	//para teste
+	public void mostraPalavras() {
+		for(int i = this.palavras.size()-1; i >= 0; i-- ) {
+			System.out.println(this.palavras.get(i));
+		}
 	}
 	
 	private String getWord(int i, int lim) {
