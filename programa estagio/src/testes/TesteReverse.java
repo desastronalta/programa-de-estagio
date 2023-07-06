@@ -10,7 +10,6 @@ public class TesteReverse {
 		rev.setFrase(caso);
 		caso = rev.inverteString();
 		System.out.println(caso);
-		rev.mostraPalavras();
 	}
 
 }

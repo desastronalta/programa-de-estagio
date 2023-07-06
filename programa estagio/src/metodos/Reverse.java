@@ -40,7 +40,7 @@ public class Reverse {
 			}else if(i == tam-1) {
 				for(int k = tam-1; k >= lim; k-- ) {
 					if(k == lim) {
-						palavras.add(getWord(tam-1,k+1));
+						palavras.add(getWord(tam,k+1));
 					}
 				}
 			}
