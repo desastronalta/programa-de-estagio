@@ -18,8 +18,13 @@ public class Duplicados {
 		//palavras = new ArrayList<String>();
 		semDuplicadas = new StringBuffer();
 	}
+	public String mostrarSemDupli() {
+		addLetra();
+		String label =  this.semDuplicadas.toString();
+		return label;
+	}
 	
-	public void addLetra() {
+	private void addLetra() {
 		String palavra = this.frase;
 		for(int i = 0; i < palavra.length(); i++ ) {
 			char letra = palavra.charAt(i);
@@ -29,7 +34,7 @@ public class Duplicados {
 				this.semDuplicadas.append(letra);
 			}
 		}
-	System.out.println(this.semDuplicadas);
+	
 	}
 	private boolean verificaDupli(char letra) {
 		String palavra = this.semDuplicadas.toString();

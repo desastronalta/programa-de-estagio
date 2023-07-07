@@ -5,8 +5,8 @@ import metodos.Duplicados;
 public class TesteDuplicado {
 	public static void main(String[]args) {
 		Duplicados dupli = new Duplicados();
-		String frase = "hello, world!";
+		String frase = "Hello, World!";
 		dupli.setFrase(frase);
-		dupli.addLetra();
+		System.out.println(dupli.mostrarSemDupli());
 	}
 }
