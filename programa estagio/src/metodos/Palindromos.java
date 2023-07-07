@@ -40,6 +40,7 @@ public class Palindromos {
 		}
 	}
 	public void getMaiorPalin() {
+		lerSubStr();
 		ArrayList<String> maiorPalin = new ArrayList<String>();
 		int maior = 0;
 		for(int i = 0; i < this.palindromos.size()-1; i++) {
