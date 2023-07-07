@@ -24,17 +24,41 @@ public class Palindromos {
 	}
 	
 	private void lerSubStr() {
-		String inverso = new StringBuilder(this.palavra).reverse().toString();
+		String inverso;
 		String palavra = this.palavra;
-		String subStr1, subStr2;
+		String subStr;
 		for(int i = 0; i < this.palavra.length(); i++) {
 			for(int j = i; j < this.palavra.length(); j++) {
-				if(j > 0) {
-					subStr1 = palavra.substring(i, j);
+				if(j > i) {
+					subStr = palavra.substring(i, j);
+					inverso = new StringBuilder(subStr).reverse().toString();
+					if(subStr.equals(inverso)){
+						this.palindromos.add(subStr);
+					}
 				}
-				
 			}
 		}
 	}
-	
+	public void getMaiorPalin() {
+		ArrayList<String> maiorPalin = new ArrayList<String>();
+		int maior = 0;
+		for(int i = 0; i < this.palindromos.size()-1; i++) {
+			int tam = this.palindromos.get(i).length();
+			if(tam > maior){
+				maior = tam;
+			}
+		}
+		for(int i = 0; i < this.palindromos.size()-1; i++) {
+			String palavra = this.palindromos.get(i);
+			if(palavra.length() == maior) {
+				maiorPalin.add(palavra);
+			}
+		}
+		mostraPalindromo(maiorPalin);
+	}
+	private void mostraPalindromo(ArrayList<String> lista) {
+		for(int i = 0; i < lista.size()-1; i++) {
+			System.out.println(lista.get(i));
+		}
+	}
 }
