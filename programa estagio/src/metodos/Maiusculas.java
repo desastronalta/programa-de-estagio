@@ -18,6 +18,9 @@ public class Maiusculas {
 			 if(i == 0) {
 				 indice.add(i);
 			 }
+			 if(i == palavra.length()-1) {
+				 break;
+			 }
 			 char letra = palavra.charAt(i);
 			 if(i != 0 && getIndice(letra, i) != 0 ) {
 				 indice.add(getIndice(letra, i));
@@ -43,9 +46,9 @@ public class Maiusculas {
 	 }
 	 private void addMaiuscula() {
 		 for(int i = 0; i < this.indice.size();i++) {
-			 Character c = this.fraseMod.charAt(i);
+			 Character c = this.fraseMod.charAt(this.indice.get(i));
 			 c = Character.toUpperCase(c);
-			 this.fraseMod.setCharAt(i, c);
+			 this.fraseMod.setCharAt(this.indice.get(i), c);
 			 //alterar metodo para adicionar letra por letra.
 		 }
 	 }
