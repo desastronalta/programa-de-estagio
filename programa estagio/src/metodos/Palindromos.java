@@ -39,27 +39,19 @@ public class Palindromos {
 			}
 		}
 	}
-	public void getMaiorPalin() {
+	public String getMaiorPalin() {
 		lerSubStr();
-		ArrayList<String> maiorPalin = new ArrayList<String>();
+		int aux = 0;
+		String maiorPali = null;
 		int maior = 0;
 		for(int i = 0; i < this.palindromos.size()-1; i++) {
 			int tam = this.palindromos.get(i).length();
 			if(tam > maior){
 				maior = tam;
+				aux = i;
 			}
 		}
-		for(int i = 0; i < this.palindromos.size()-1; i++) {
-			String palavra = this.palindromos.get(i);
-			if(palavra.length() == maior) {
-				maiorPalin.add(palavra);
-			}
-		}
-		mostraPalindromo(maiorPalin);
-	}
-	private void mostraPalindromo(ArrayList<String> lista) {
-		for(int i = 0; i < lista.size()-1; i++) {
-			System.out.println(lista.get(i));
-		}
+		maiorPali = this.palindromos.get(aux);
+		return maiorPali;
 	}
 }
