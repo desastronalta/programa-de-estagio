@@ -19,7 +19,7 @@ public class Maiusculas {
 				 indice.add(i);
 			 }
 			 char letra = palavra.charAt(i);
-			 if(i != 0) {
+			 if(i != 0 && getIndice(letra, i) != 0 ) {
 				 indice.add(getIndice(letra, i));
 				 
 			 }
@@ -35,7 +35,7 @@ public class Maiusculas {
 		 ponto[3] = '!';
 		 	for(int j = 0; j < ponto.length; j++) {
 		 		if(e == ponto[j]) {
-		 			k = i+1;
+		 			k = i+2;
 		 		}
 		 	}
 		 	
